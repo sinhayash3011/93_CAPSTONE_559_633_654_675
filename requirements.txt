@@ -1,0 +1,8 @@
+pandas
+numpy
+scikit-learn
+torch
+matplotlib
+haversine
+xgboost
+ptflops # For FLOPs estimation (optional)
