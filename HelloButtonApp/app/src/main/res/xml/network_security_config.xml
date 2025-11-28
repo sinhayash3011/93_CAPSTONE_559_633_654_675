@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Allow cleartext (HTTP) to local/dev hosts used in this project -->
+    <base-config cleartextTrafficPermitted="true" />
+
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- emulator -> host -->
+        <domain includeSubdomains="false">10.0.2.2</domain>
+        <!-- localhost (adb reverse) -->
+        <domain includeSubdomains="false">127.0.0.1</domain>
+        <!-- your Mac LAN IP (replace if different) -->
+        <domain includeSubdomains="false">192.168.1.165</domain>
+    </domain-config>
+</network-security-config>
