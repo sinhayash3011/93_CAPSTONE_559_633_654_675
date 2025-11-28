@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background image -->
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/bg_watch"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Dark translucent overlay to make UI readable (lower brightness) -->
+    <View
+        android:id="@+id/overlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#99000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Content column -->
+    <LinearLayout
+        android:id="@+id/contentColumn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.14">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smart Location Predictor"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="18dp"/>
+
+        <!-- Card-like container for GPS -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="10dp"
+            android:padding="12dp"
+            android:backgroundTint="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/btnGps"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="GET GPS LOCATION"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"
+                    android:backgroundTint="#5B8BE6"
+                    android:textColor="#FFFFFF"
+                    android:stateListAnimator="@null"/>
+
+                <TextView
+                    android:id="@+id/tvGpsResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GPS: --"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card-like container for ML Model -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="10dp"
+            android:padding="12dp"
+            android:backgroundTint="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/btnModel"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="PREDICT USING ML MODEL"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"
+                    android:backgroundTint="#6FCF97"
+                    android:textColor="#FFFFFF"
+                    android:stateListAnimator="@null"/>
+
+                <TextView
+                    android:id="@+id/tvModelResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Model: --"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Status line -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status: --"
+            android:textSize="30sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
